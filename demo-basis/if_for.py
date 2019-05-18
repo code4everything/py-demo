@@ -5,6 +5,7 @@ import list_tuple
 print()
 
 # -----------------------条件判断-----------------------
+
 age = int(input('please input you age: '))
 
 print()
