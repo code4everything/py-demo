@@ -38,5 +38,7 @@ t = (1,)
 print(t)
 print(t[0])
 
+print()
+
 week = ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
 print(week)
