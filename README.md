@@ -1,2 +1,2 @@
-# py_demo
+# py-demo
 demos for python
