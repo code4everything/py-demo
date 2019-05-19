@@ -1,6 +1,6 @@
 # coding:utf-8
 
-import list_tuple
+from list_tuple import week
 
 print()
 
@@ -21,7 +21,7 @@ print()
 
 # ----------------------循环-------------------------------
 
-for day in list_tuple.week:
+for day in week:
     print(day)
 
 cntSum = 0
