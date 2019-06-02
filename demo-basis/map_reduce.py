@@ -18,13 +18,8 @@ def concat(x, y):
 # reduce 同样接受两个参数，一个函数（该函数接受两个参数），一个可迭代的对象
 print(reduce(concat, list(range(1, 10))))
 
-
-def reduce_test(x, y):
-    print('y:', y)
-
-
 # 从测试中可以看出，当列表只有一个值时，不会调用函数
-print(reduce(reduce_test, [1]))
+print(reduce(lambda x, y: print('y:', y), [1]))
 
 
 def odd(x):

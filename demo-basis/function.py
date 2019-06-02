@@ -81,5 +81,22 @@ print("test multi params:", *['param1', 'param2'])
 
 key_func('tony', 'boy', job='engineer', city='New York')
 
-# see detail:
+
+# see details:
 # https://www.liaoxuefeng.com/wiki/1016959663602400/1017261630425888
+
+
+# --------------将函数作为返回值------------------------------------------
+
+def lazy_sum(*args):
+    def sum():
+        ax = 0
+        for x in args:
+            ax += x
+        return ax
+
+    return sum
+
+
+f = lazy_sum(*list(range(0, 10)))
+print(f())
