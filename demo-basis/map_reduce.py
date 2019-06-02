@@ -25,3 +25,16 @@ def reduce_test(x, y):
 
 # 从测试中可以看出，当列表只有一个值时，不会调用函数
 print(reduce(reduce_test, [1]))
+
+
+def odd(x):
+    return x & 1 == 1
+
+
+# 过滤
+print(list(filter(odd, list(range(0, 10)))))
+
+li = [9, 8, -7, 2, 6, -1]
+
+# 排序
+print(sorted(li, key=abs, reverse=True))
