@@ -1,5 +1,5 @@
 # coding:utf-8
-
+import functools
 import time
 
 print()
@@ -100,3 +100,13 @@ def lazy_sum(*args):
 
 f = lazy_sum(*list(range(0, 10)))
 print(f())
+
+# -------------------------偏函数------------------------------------------
+
+# see details:
+# https://www.liaoxuefeng.com/wiki/1016959663602400/1017454145929440
+
+print()
+int2 = functools.partial(int, base=2)
+print(int2('1101010101'))
+print(int2('2321335', base=10))
