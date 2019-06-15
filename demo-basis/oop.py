@@ -3,6 +3,8 @@
 
 # 类中定义的方法一个参数永远是实例变量 self ，在调用时不要传递该参数
 class Student(object):
+    # 允许动态绑定的属性名称
+    __slots__ = ("name", "age")
     # 类属性，所有实例均可访问
     id = 12847347
 
@@ -13,6 +15,8 @@ class Student(object):
         # 私有变量，外部可访问，但不推荐外部访问
         self._see = True
 
+        self.props = "getter and setter"
+
     def print_score(self):
         print('%s: %s' % (self.name, self.__score))
 
@@ -21,6 +25,25 @@ class Student(object):
         自定义长度
         """
         return 99
+
+    @property
+    def props(self):
+        """
+        属性的封装
+        """
+        return self.props
+
+    @props.setter
+    def props(self, value):
+        self.props = value
+
+    def __str__(self):
+        """
+        to string
+        to see more built in function:
+        https://www.liaoxuefeng.com/wiki/1016959663602400/1017590712115904
+        """
+        return "Student(xxx)"
 
 
 ming = Student('xiao', 89)
