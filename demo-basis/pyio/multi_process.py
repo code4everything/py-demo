@@ -14,3 +14,5 @@ else:
 
 # 更多多进程的技术参考：
 # https://www.liaoxuefeng.com/wiki/1016959663602400/1017628290184064
+# 分布式进程
+# https://www.liaoxuefeng.com/wiki/1016959663602400/1017631559645600
