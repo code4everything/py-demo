@@ -1,6 +1,7 @@
 # coding:utf-8
 
 import argparse
+import base64
 import os
 from collections import ChainMap
 from collections import Counter
@@ -63,3 +64,10 @@ c = Counter()
 for ch in 'programming':
     c[ch] = c[ch] + 1
 print(c)
+
+# ==================================================BASE64编码=================================================
+
+b = base64.encodebytes(b'yoo, cool')
+print(b)
+print(base64.decodebytes(b))
+print(base64.urlsafe_b64encode(b'/user?name=guest'))
