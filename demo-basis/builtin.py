@@ -2,6 +2,8 @@
 
 import argparse
 import base64
+import hashlib
+import hmac
 import os
 from collections import ChainMap
 from collections import Counter
@@ -71,3 +73,13 @@ b = base64.encodebytes(b'yoo, cool')
 print(b)
 print(base64.decodebytes(b))
 print(base64.urlsafe_b64encode(b'/user?name=guest'))
+
+# ===================================================加密==================================================
+
+md5 = hashlib.md5()
+md5.update('how to use md5 in python hashlib?'.encode('utf-8'))
+print(md5.hexdigest())
+sha2 = hashlib.sha256()
+sha2.update('test sha256'.encode('utf-8'))
+print(sha2.hexdigest())
+print(hmac.new(b'salt', b'hello dear', digestmod='md5').hexdigest())
