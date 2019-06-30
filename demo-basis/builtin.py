@@ -4,6 +4,7 @@ import argparse
 import base64
 import hashlib
 import hmac
+import itertools
 import os
 from collections import ChainMap
 from collections import Counter
@@ -11,7 +12,10 @@ from collections import OrderedDict
 from collections import defaultdict
 from collections import deque
 from collections import namedtuple
+from contextlib import closing
+from contextlib import contextmanager
 from datetime import datetime
+from urllib.request import urlopen
 
 # =======================获取当前日期和时间=======================================
 
@@ -83,3 +87,48 @@ sha2 = hashlib.sha256()
 sha2.update('test sha256'.encode('utf-8'))
 print(sha2.hexdigest())
 print(hmac.new(b'salt', b'hello dear', digestmod='md5').hexdigest())
+
+# =======================================================迭代工具================================================
+
+# 如果没有重复次数，将无限重复下去
+bs = itertools.repeat('a', 8)
+for b in bs:
+    print(b)
+# 把一组迭代对象串联起来
+bs = itertools.chain('abc', 'def')
+for b in bs:
+    print(b)
+# 把迭代器中相邻的重复元素挑出来放在一起
+for k, g in itertools.groupby('aaabbbccaa'):
+    print(k, list(g))
+
+
+# 更多应用，请参考：
+# https://www.liaoxuefeng.com/wiki/1016959663602400/1017783145987360
+
+# ===========================================================上下文管理================================================
+
+class Query(object):
+
+    def __init__(self, name: str):
+        self.name = name
+
+    def query(self):
+        print('query about %s' % self.name)
+
+
+@contextmanager
+def create_query(name: str) -> Query:
+    print('begin')
+    q = Query(name)
+    yield q
+    print('end')
+
+
+# 实现了上下文管理的对象，可以使用with语句来实现自动关闭资源
+with create_query('bob') as q:
+    q.query()
+# 没有实现上下文管理的，可以用closing来实现
+with closing(urlopen('https://www.python.org')) as page:
+    for line in page:
+        print(line)
