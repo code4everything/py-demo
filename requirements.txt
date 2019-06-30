@@ -1,2 +1,16 @@
 # pip install -r requirements.txt
-pillow==6.0.0
+
+# 图像处理库：https://github.com/python-pillow/Pillow
+# pillow==6.0.0
+
+# HTTP请求库：https://github.com/kennethreitz/requests
+# requests==2.22.0
+
+# 字符编码检测工具：https://github.com/chardet/chardet
+# chardet==3.0.4
+
+# 运维（系统管理）工具：https://github.com/giampaolo/psutil
+# psutil==5.6.3
+
+# 定时处理库：https://github.com/agronholm/apscheduler
+# apscheduler==3.6.0
