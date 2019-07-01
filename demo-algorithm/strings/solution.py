@@ -4,6 +4,7 @@ from collections import Counter
 
 
 class Solution:
+
     def frequency_sort(self, s: str) -> str:
         """
         LeetCode(id=451,title=根据字符出现频率排序,difficulty=medium)

@@ -7,7 +7,7 @@ class Solution:
 
     def sumOfLeftLeaves(self, root: TreeNode) -> int:
         """
-        LeetCode(id=404,title=左叶子之和,difficulty=medium)
+        LeetCode(id=404,title=左叶子之和,difficulty=easy)
         """
         if root:
             val = 0
