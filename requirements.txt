@@ -14,3 +14,21 @@
 
 # 定时处理库：https://github.com/agronholm/apscheduler
 # apscheduler==3.6.0
+
+# 控制台绘图工具：https://github.com/glamp/bashplotlib
+# bashplotlib==0.6.5
+
+# 表情包工具：https://github.com/carpedm20/emoji
+# emoji==0.5.2
+
+# 地理位置检索库：https://github.com/geopy/geopy
+# geopy==1.20.0
+
+# 新闻检索工具
+# newspaper3k==0.2.8
+
+# 打印工具
+# pprint==0.1
+
+# 维基百科检索：https://github.com/goldsmith/Wikipedia
+# wikipedia==1.4.0
