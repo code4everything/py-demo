@@ -4,6 +4,18 @@ from collections import Counter, deque
 
 class Solution:
 
+    def countSegments(self, s: str) -> int:
+        """
+        LeetCode(id=434,title=字符串中的单词数,difficulty=medium)
+        """
+        res = 0
+        last = ' '
+        for i in s:
+            if i != ' ' and last == ' ':
+                res += 1
+            last = i
+        return res
+
     def addStrings(self, num1: str, num2: str) -> str:
         """
         LeetCode(id=415,title=字符串相加,difficulty=medium)
