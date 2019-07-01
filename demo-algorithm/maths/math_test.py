@@ -8,6 +8,12 @@ from maths.solution import Solution
 class TestMath(unittest.TestCase):
     s = Solution()
 
+    def test_third_max(self):
+        self.assertEqual(self.s.thirdMax([3, 2, 1]), 1)
+        self.assertEqual(self.s.thirdMax([1, 2]), 2)
+        self.assertEqual(self.s.thirdMax([2, 2, 3, 1]), 1)
+        self.assertEqual(self.s.thirdMax([3, 2, 1, 3, 5, 6, 4, 5, 6, 7, 5, 4, 5, 6, 6, 5]), 5)
+
     def test_to_hex(self):
         self.assertEqual(self.s.toHex(26), '1a')
         self.assertEqual(self.s.toHex(-1), 'ffffffff')
