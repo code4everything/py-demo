@@ -1,9 +1,33 @@
 # coding:utf-8
-
-from collections import Counter
+from collections import Counter, deque
 
 
 class Solution:
+
+    def addStrings(self, num1: str, num2: str) -> str:
+        """
+        LeetCode(id=415,title=字符串相加,difficulty=medium)
+        """
+        len1 = len(num1)
+        len2 = len(num2)
+        size = max(len1, len2)
+        base = 0
+        q = deque()
+        for i in range(0, size):
+            n = base
+            if i < len1:
+                n += int(num1[len1 - i - 1])
+            if i < len(num2):
+                n += int(num2[len2 - i - 1])
+            if n > 9:
+                base = 1
+                q.insert(0, str(n - 10))
+            else:
+                base = 0
+                q.insert(0, str(n))
+        if base == 1:
+            return "1".join(q)
+        return "".join(q)
 
     def longestPalindrome(self, s: str) -> int:
         """
