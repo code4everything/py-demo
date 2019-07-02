@@ -5,6 +5,19 @@ from typing import List
 class Solution:
     hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
 
+    def arrangeCoins(self, n: int) -> int:
+        """
+        LeetCode(id=441,title=排列硬币,difficulty=ease)
+        """
+        left, right = 0, n + 1
+        while left < right:
+            mid = left + ((right - left) >> 1)
+            if (((1 + mid) * mid) >> 1) <= n:
+                left = mid + 1
+            else:
+                right = mid
+        return right - 1
+
     def thirdMax(self, nums: List[int]) -> int:
         """
         LeetCode(id=414,title=第三大的数,difficulty=ease)

@@ -8,6 +8,13 @@ from maths.solution import Solution
 class TestMath(unittest.TestCase):
     s = Solution()
 
+    def test_arrange_coins(self):
+        self.assertEqual(self.s.arrangeCoins(1), 1)
+        self.assertEqual(self.s.arrangeCoins(5), 2)
+        self.assertEqual(self.s.arrangeCoins(8), 3)
+        self.assertEqual(self.s.arrangeCoins(10), 4)
+        self.assertEqual(self.s.arrangeCoins(17), 5)
+
     def test_third_max(self):
         self.assertEqual(self.s.thirdMax([3, 2, 1]), 1)
         self.assertEqual(self.s.thirdMax([1, 2]), 2)
