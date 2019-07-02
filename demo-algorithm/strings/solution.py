@@ -6,6 +6,37 @@ from typing import List
 
 class Solution:
 
+    def compress(self, chars: List[str]) -> int:
+        """
+        LeetCode(id=443,title=压缩字符串,difficulty=medium)
+        """
+        base = 0
+        char = ''
+        idx = 0
+        for c in chars:
+            if c != char:
+                idx += self.lengthHelper(base, chars, idx)
+                chars[idx] = c
+                idx += 1
+                base = 1
+            else:
+                base += 1
+            char = c
+        return idx + self.lengthHelper(base, chars, idx)
+
+    def lengthHelper(self, n: int, chars: List[str], idx: int) -> int:
+        if n < 2:
+            return 0
+        size = 1
+        s = str(n)
+        while n > 9:
+            size += 1
+            n /= 10
+        for c in s:
+            chars[idx] = c
+            idx += 1
+        return size
+
     def findAnagrams(self, s: str, p: str) -> List[int]:
         """
         LeetCode(id=438,title=找到字符串中所有字母异位词,difficulty=medium)
