@@ -5,6 +5,12 @@ from typing import List
 class Solution:
     hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
 
+    def minMoves(self, nums: List[int]) -> int:
+        """
+        LeetCode(id=453,title=最小移动次数使数组元素相等,difficulty=ease)
+        """
+        return sum(nums) - min(nums) * len(nums)
+
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         """
         LeetCode(id=448,title=找到所有数组中消失的数字,difficulty=ease)
