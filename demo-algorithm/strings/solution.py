@@ -6,6 +6,12 @@ from typing import List
 
 class Solution:
 
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        """
+        LeetCode(id=459,title=重复的子字符串,difficulty=medium)
+        """
+        return (s + s)[1:-1].count(s) != 0
+
     def compress(self, chars: List[str]) -> int:
         """
         LeetCode(id=443,title=压缩字符串,difficulty=medium)
