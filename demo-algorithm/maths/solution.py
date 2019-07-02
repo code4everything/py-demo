@@ -5,6 +5,22 @@ from typing import List
 class Solution:
     hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
 
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+        """
+        LeetCode(id=463,title=岛屿的周长,difficulty=easy)
+        """
+        length = len(grid)
+        width = len(grid[0])
+        prm = 0
+        for i in range(length):
+            for j in range(width):
+                if grid[i][j] == 1:
+                    if j == 0 or grid[i][j - 1] == 0:
+                        prm += 1
+                    if i == 0 or grid[i - 1][j] == 0:
+                        prm += 1
+        return prm * 2
+
     def findContentChildren(self, g: List[int], s: List[int]) -> int:
         """
         LeetCode(id=455,title=分发饼干,difficulty=easy)
