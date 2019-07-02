@@ -1,8 +1,32 @@
 # coding:utf-8
+
 from collections import Counter, deque
+from typing import List
 
 
 class Solution:
+
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        """
+        LeetCode(id=438,title=找到字符串中所有字母异位词,difficulty=medium)
+        """
+        b = ord('a')
+        result = []
+        ps = [0 for i in range(0, 26)]
+        for c in p:
+            ps[ord(c) - b] += 1
+        ss = [0 for i in range(0, 26)]
+        start, end = 0, 0
+        while end < len(s):
+            n = ord(s[end]) - b
+            end += 1
+            ss[n] += 1
+            while ss[n] > ps[n]:
+                ss[ord(s[start]) - b] -= 1
+                start += 1
+            if end - start == len(p):
+                result.append(start)
+        return result
 
     def countSegments(self, s: str) -> int:
         """
