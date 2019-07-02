@@ -5,15 +5,29 @@ from typing import List
 class Solution:
     hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
 
+    def findContentChildren(self, g: List[int], s: List[int]) -> int:
+        """
+        LeetCode(id=455,title=分发饼干,difficulty=easy)
+        """
+        g.sort()
+        s.sort()
+        gi, si, res = 0, 0, 0
+        while gi < len(g) and si < len(s):
+            if s[si] >= g[gi]:
+                gi += 1
+                res += 1
+            si += 1
+        return res
+
     def minMoves(self, nums: List[int]) -> int:
         """
-        LeetCode(id=453,title=最小移动次数使数组元素相等,difficulty=ease)
+        LeetCode(id=453,title=最小移动次数使数组元素相等,difficulty=easy)
         """
         return sum(nums) - min(nums) * len(nums)
 
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         """
-        LeetCode(id=448,title=找到所有数组中消失的数字,difficulty=ease)
+        LeetCode(id=448,title=找到所有数组中消失的数字,difficulty=easy)
         """
         size = len(nums)
         tmp = [0 for i in range(0, size)]
@@ -30,7 +44,7 @@ class Solution:
 
     def arrangeCoins(self, n: int) -> int:
         """
-        LeetCode(id=441,title=排列硬币,difficulty=ease)
+        LeetCode(id=441,title=排列硬币,difficulty=easy)
         """
         left, right = 0, n + 1
         while left < right:
@@ -43,7 +57,7 @@ class Solution:
 
     def thirdMax(self, nums: List[int]) -> int:
         """
-        LeetCode(id=414,title=第三大的数,difficulty=ease)
+        LeetCode(id=414,title=第三大的数,difficulty=easy)
         """
         maxs = []
         for n in nums:
@@ -65,7 +79,7 @@ class Solution:
 
     def toHex(self, num: int) -> str:
         """
-        LeetCode(id=405,title=数字转换为十六进制数,difficulty=ease)
+        LeetCode(id=405,title=数字转换为十六进制数,difficulty=easy)
         """
         negative = num < 0
         if negative:
