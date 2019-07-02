@@ -5,6 +5,23 @@ from typing import List
 class Solution:
     hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
 
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        """
+        LeetCode(id=448,title=找到所有数组中消失的数字,difficulty=ease)
+        """
+        size = len(nums)
+        tmp = [0 for i in range(0, size)]
+        while size > 0:
+            size -= 1
+            tmp[nums[size] - 1] += 1
+        res = []
+        idx = 0
+        for n in tmp:
+            idx += 1
+            if n == 0:
+                res.append(idx)
+        return res
+
     def arrangeCoins(self, n: int) -> int:
         """
         LeetCode(id=441,title=排列硬币,difficulty=ease)
