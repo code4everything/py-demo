@@ -1,34 +1,38 @@
 # pip install -r requirements.txt
+# repository: https://pypi.org/
+
+# 2D图形库：https://github.com/matplotlib/matplotlib
+matplotlib==3.1.2
 
 # 图像处理库：https://github.com/python-pillow/Pillow
-# pillow==6.0.0
+pillow==6.0.0
 
 # HTTP请求库：https://github.com/kennethreitz/requests
-# requests==2.22.0
+requests==2.22.0
 
 # 字符编码检测工具：https://github.com/chardet/chardet
-# chardet==3.0.4
+chardet==3.0.4
 
 # 运维（系统管理）工具：https://github.com/giampaolo/psutil
-# psutil==5.6.3
+psutil==5.6.3
 
 # 定时处理库：https://github.com/agronholm/apscheduler
-# apscheduler==3.6.0
+apscheduler==3.6.0
 
 # 控制台绘图工具：https://github.com/glamp/bashplotlib
-# bashplotlib==0.6.5
+bashplotlib==0.6.5
 
 # 表情包工具：https://github.com/carpedm20/emoji
-# emoji==0.5.2
+emoji==0.5.2
 
 # 地理位置检索库：https://github.com/geopy/geopy
-# geopy==1.20.0
+geopy==1.20.0
 
 # 新闻检索工具
-# newspaper3k==0.2.8
+newspaper3k==0.2.8
 
 # 打印工具
-# pprint==0.1
+pprint==0.1
 
 # 维基百科检索：https://github.com/goldsmith/Wikipedia
-# wikipedia==1.4.0
+wikipedia==1.4.0
