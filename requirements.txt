@@ -14,7 +14,7 @@ requests==2.22.0
 chardet==3.0.4
 
 # 运维（系统管理）工具：https://github.com/giampaolo/psutil
-psutil==5.6.3
+psutil==5.6.6
 
 # 定时处理库：https://github.com/agronholm/apscheduler
 apscheduler==3.6.0
