@@ -5,7 +5,7 @@
 matplotlib==3.1.2
 
 # 图像处理库：https://github.com/python-pillow/Pillow
-pillow==6.2.0
+pillow==8.2.0
 
 # HTTP请求库：https://github.com/kennethreitz/requests
 requests==2.22.0
